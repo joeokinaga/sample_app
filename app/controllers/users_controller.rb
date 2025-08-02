@@ -74,3 +74,4 @@ class UsersController < ApplicationController
       redirect_to(root_url, status: :see_other) unless current_user.admin?
     end
 end
+ 

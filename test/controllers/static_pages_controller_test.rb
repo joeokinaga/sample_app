@@ -31,4 +31,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
   end
+
+  test "should get privacy" do
+    get privacy_path
+    assert_response :success
+    assert_select "title", "Privacy | #{@base_title}"
+  end
 end

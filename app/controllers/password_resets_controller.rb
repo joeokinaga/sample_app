@@ -30,6 +30,7 @@ class PasswordResetsController < ApplicationController
       @user.forget                                       # セッションハイジャック防止のためにセッショントークンを破棄
       reset_session
       log_in @user
+      @user.update_attribute(:reset_digest, nil)
       flash[:success] = "Password has been reset."
       redirect_to @user
     else

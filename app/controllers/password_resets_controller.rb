@@ -21,7 +21,7 @@ class PasswordResetsController < ApplicationController
 
   def edit
   end
-
+ 
   def update
     if params[:user][:password].empty?                  # （3）への対応
       @user.errors.add(:password, "can't be empty")
